@@ -12,6 +12,9 @@
 
 #include "game_defs.h"
 
+#include "ui.h"
+
+
 
 using namespace std;
 

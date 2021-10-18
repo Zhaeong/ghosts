@@ -5,7 +5,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <iostream>
 
 #ifdef EMSCRIPTEN
     #include <emscripten.h>
@@ -13,6 +12,7 @@
 
 #include "game_defs.h"
 #include "game.h"
+#include "ui.h"
 #include <cmath>
 #include <time.h>
 

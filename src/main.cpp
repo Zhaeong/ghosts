@@ -4,6 +4,11 @@
 GameState GS;
 
 
+//top level varable declarations for extern variables
+//defined in game_defs.h
+int NUM_UI_ENTITIES = 0;
+Position UI_POS_Array[10];
+
 #ifndef EMSCRIPTEN
 const int FPS = 60;
 //How many miliseconds per frame
@@ -81,6 +86,12 @@ int main(int argv, char **args)
     } 
 
     SDL_PauseAudioDevice(GS.audioDevice, 0);
+
+    //InitUIEntity();
+    AddUIEntity(12,34);
+    AddUIEntity(12,34);
+    AddUIEntity(12,34);
+
 
 
 

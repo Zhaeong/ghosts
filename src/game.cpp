@@ -133,6 +133,8 @@ void RemoveTextureWhiteSpace(SDL_Texture *texture)
     void *mPixels;
     int mPitch;
 
+    AddUIEntity(11,11);
+
     if (texture == NULL)
     {
         printf("Input Texture is null in RemoveTextureWhiteSpace! SDL Error: %s\n",

@@ -4,7 +4,7 @@
 #include <string>
 #include <SDL.h>
 #include <SDL_image.h>
-
+#include <iostream>
 
 using namespace std;
 
@@ -24,6 +24,7 @@ A man wakes up for work
 */
 const Uint32 TEXTUREFORMAT = SDL_PIXELFORMAT_RGBA8888;
 const int NUM_AUDIO_CLIPS = 4;
+
 
 
 struct AudioClip
@@ -66,6 +67,26 @@ struct GameState
 
   
 };
+
+
+struct Position
+{
+    int x;
+    int y;
+    int w;
+    int h;
+};
+
+
+//extern means global variable, needs a delaraction in a cpp file
+//but afterwards any file that includes this file will be able to 
+//use this global variable
+extern int NUM_UI_ENTITIES;
+
+extern Position UI_POS_Array[10];
+
+
+
 
 
 #endif // GAMEDEFS_H
