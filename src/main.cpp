@@ -6,8 +6,10 @@ GameState GS;
 
 //top level varable declarations for extern variables
 //defined in game_defs.h
-int NUM_UI_ENTITIES = 0;
-Position UI_POS_Array[10];
+int NUM_ENTITIES = 0;
+
+//Global var initialize all to 0 anyways, but just to be safe
+ComponentList C_LIST = {0};
 
 #ifndef EMSCRIPTEN
 const int FPS = 60;
@@ -63,6 +65,7 @@ int main(int argv, char **args)
 {
     //cout << "Starting Game\n";
 
+    cout << "cloist " << C_LIST.num_position_comp << "\n";
     GS.startTime = SDL_GetTicks();
     GS.curTime = SDL_GetTicks();
     //Initiate SDL
@@ -87,10 +90,13 @@ int main(int argv, char **args)
 
     SDL_PauseAudioDevice(GS.audioDevice, 0);
 
-    //InitUIEntity();
-    AddUIEntity(12,34);
-    AddUIEntity(12,34);
-    AddUIEntity(12,34);
+    AddUIEntity(&C_LIST, 12,34);
+    AddUIEntity(&C_LIST, 12,34);
+
+    ReadUIEntity(&C_LIST);
+
+
+    cout << "cloist " << C_LIST.num_position_comp << "\n";
 
 
 

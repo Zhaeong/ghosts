@@ -1,13 +1,22 @@
 #include "ui.h"
 
-void InitUIEntity(){
-    NUM_UI_ENTITIES = 0;
+void AddUIEntity(ComponentList *cList, int inX, int inY){
+    int entityID = NUM_ENTITIES;
+    NUM_ENTITIES += 1;
+
+    cout << "EntityID: " << entityID << "\n";
+
+    cList->num_position_comp += 1; 
+    cList->position_comp[entityID].ID = entityID;
+    cList->position_comp[entityID].x = inX;
+    cList->position_comp[entityID].y = inY;
+
 }
-void AddUIEntity(int input_x, int input_y){
-    NUM_UI_ENTITIES += 1;
 
-    cout << "num entiteis: " << NUM_UI_ENTITIES << "\n";
-    UI_POS_Array[NUM_UI_ENTITIES].x = input_x; 
-    UI_POS_Array[NUM_UI_ENTITIES].y = input_y; 
-
+void ReadUIEntity(ComponentList *cList)
+{
+    for(int i = 0; i < cList->num_position_comp; i ++)
+    {
+        cout << "The entity: " << cList->position_comp[i].ID << " has x: " << cList->position_comp[i].x << "\n";
+    }
 }

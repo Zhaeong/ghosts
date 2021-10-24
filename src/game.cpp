@@ -133,7 +133,9 @@ void RemoveTextureWhiteSpace(SDL_Texture *texture)
     void *mPixels;
     int mPitch;
 
-    AddUIEntity(11,11);
+    AddUIEntity(&C_LIST, 688,34);
+
+    cout << "cloist " << C_LIST.num_position_comp << "\n";
 
     if (texture == NULL)
     {

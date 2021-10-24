@@ -5,7 +5,7 @@
 
 
 
-void InitUIEntity();
-void AddUIEntity(int input_x, int input_y);
+void AddUIEntity(ComponentList *cList, int inX, int inY);
+void ReadUIEntity(ComponentList *cList);
 
 #endif // GAME_H

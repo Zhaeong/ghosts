@@ -71,6 +71,8 @@ struct GameState
 
 struct Position
 {
+    int ID;
+
     int x;
     int y;
     int w;
@@ -78,15 +80,18 @@ struct Position
 };
 
 
+struct ComponentList
+{
+    int num_position_comp;
+    Position position_comp[10];
+};
+
+
 //extern means global variable, needs a delaraction in a cpp file
 //but afterwards any file that includes this file will be able to 
 //use this global variable
-extern int NUM_UI_ENTITIES;
-
-extern Position UI_POS_Array[10];
-
-
-
+extern int NUM_ENTITIES;
+extern ComponentList C_LIST;
 
 
 #endif // GAMEDEFS_H
